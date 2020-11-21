@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Contains page_json.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function page_json_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.page_json':
+      $output = '<h2>' . t('About') . '</h2>';
+      $output .= '<p>' . t('This module adds "Site API Key" field in the "Basic Site Settings" site details form.') . '</p>';
+      $output .= '<p>' . t('This module also provides a URL that responds with a JSON representation of a given node with the content type "page".') . '</p>';
+      $output .= '<p>' . t('Only if the previously submitted API Key and a node id (nid) of an appropriate node are present, otherwise it will respond with "access denied".') . '</p>';
+      $output .= '<p>' . t('Goto to <a href=":basic_site">Basic Site Settings</a> page to setup Site API Key for the site.', [':basic_site' => Url::fromRoute('system.site_information_settings')->toString()]) . '</p>';
+      $output .= '<p>&nbsp;</p>';
+      $output .= '<p><b>' . t('Example URL :- http://localhost/page_json/FOOBAR12345/17') . '</b></p>';
+      $output .= '<p><b>' . t('Where "FOOBAR12345" is a site api key saved in basic site settings') . '</b></p>';
+      $output .= '<p><b>' . t('Where "17" is the node id of basic page content type.') . '</b></p>';
+      return $output;
+  }
+}

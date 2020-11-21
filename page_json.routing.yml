@@ -1,0 +1,12 @@
+page_json.node_page_json:
+  path: '/page_json/{site_key}/{node}'
+  defaults:
+    _controller: '\Drupal\page_json\Controller\NodePageJson::renderNodePageJSON'
+  options:
+    parameters:
+      site_key:
+        type: config
+      node:
+        type: entity:node
+  requirements:
+    _permission: 'access content'
