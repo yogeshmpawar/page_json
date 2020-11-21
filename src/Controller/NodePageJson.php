@@ -51,7 +51,7 @@ class NodePageJson extends ControllerBase {
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    *   The Node JSON.
    */
-  public function renderNodePageJSON(string $site_key, Node $node) {
+  public function renderNodePageJson(string $site_key, Node $node) {
     // Load system site config from config factory.
     $site_config = $this->configFactory->get('system.site');
     // Get siteapikey value from the config.

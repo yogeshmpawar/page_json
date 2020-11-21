@@ -1,7 +1,7 @@
 page_json.node_page_json:
   path: '/page_json/{site_key}/{node}'
   defaults:
-    _controller: '\Drupal\page_json\Controller\NodePageJson::renderNodePageJSON'
+    _controller: '\Drupal\page_json\Controller\NodePageJson::renderNodePageJson'
   options:
     parameters:
       site_key:
